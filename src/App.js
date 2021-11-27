@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Routes, Route, Link} from 'react-router-dom';
 import {Layout, Typography, Space} from 'antd';
 
 import {Navbar, Exchanges, Homepage, CryptoDetails, Cryptocurrencies, News} from './components';
@@ -14,7 +14,7 @@ const App = () => {
       <div className = "main">
         <Layout>
           <div className = "routes">
-            <Switch>
+            <Routes>
               <Route exact path = "/">
                 <Homepage/>
               </Route>
@@ -35,13 +35,20 @@ const App = () => {
                 <News/>
               </Route>
 
-            </Switch>
+            </Routes>
           </div>
 
         </Layout>
       </div>
-      <div className = "footer">
-        
+      <div className = "footer"  >
+        <Typography.Title level = {5} style ={{color: 'white', textAlign = 'center'}}>
+          crytoverse <br /> All rights reserved
+        </Typography.Title> 
+        <Space>
+          <Link to = "/">Home</Link>
+          <Link to = "/">Exchanges</Link>
+          <Link to = "/">News</Link>
+        </Space> 
       </div>
 
     </div>
