@@ -12,7 +12,12 @@ const {Title} = Typography;
  
 const Homepage = () => {
   const {data, isFetching } = useGetCryptosQuery();
+
   console.log(data);
+
+  if(isFetching){
+    return 'Loading...';
+  }
 
   return (
     <>
