@@ -30,6 +30,11 @@ const News = ({simpilified}) => {
                      ? `${news.description.substring(0,100)}...`
                      :  news.description
                   }
+                  <div className = "provider-container">
+                    <div>
+                      <Avatar src= {news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt ="news"/>
+                    </div>
+                  </div>
                 </p>
               </a>
             </Card>
