@@ -11,7 +11,7 @@ const demoImage = 'http://coinrevolution.com/wp-content/uploads/2020/06/cryptone
 
 
 const News = ({simpilified}) => {
-  const { data : cryptoNews } = useGetCryptoNewsQuery({newsCategory: 'Cryptocurrency',count : simplified ? 6 : 129j  })
+  const { data : cryptoNews } = useGetCryptoNewsQuery({newsCategory: 'Cryptocurrency',count : simplified ? 6 : 129 })
 
   if(!cryptoNews?.value) return 'Loading...'
   return (
@@ -33,6 +33,7 @@ const News = ({simpilified}) => {
                   <div className = "provider-container">
                     <div>
                       <Avatar src= {news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt ="news"/>
+                      <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
                     </div>
                   </div>
                 </p>
