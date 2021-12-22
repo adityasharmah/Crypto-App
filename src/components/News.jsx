@@ -33,8 +33,9 @@ const News = ({simpilified}) => {
                   <div className = "provider-container">
                     <div>
                       <Avatar src= {news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt ="news"/>
-                      <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
+                      <Text className='provider-name'>{news.provider[0]?.name}</Text>
                     </div>
+                    <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
                   </div>
                 </p>
               </a>
