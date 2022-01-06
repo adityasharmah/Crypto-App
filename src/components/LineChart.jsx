@@ -1,6 +1,6 @@
 //Line Chart for price showing of Cryptos
 
-import React from ' react';
+import React from 'react';
 import {Line } from 'react-chartjs-2';
 import {Col,Row, Typography} from 'antd';
 
@@ -34,7 +34,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName}) => {
       yAxes: [
         {
           ticks: {
-            beginAtZero : true;
+            beginAtZero : true,
           }
         }
       ]
