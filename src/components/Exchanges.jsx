@@ -4,15 +4,15 @@ import { Collapse, Row, Col, Typography, Avatar } from 'antd';
 import HTMLReactParser from 'html-react-parser';
 
 import { useGetExchangesQuery } from '../services/cryptoApi';
-import { Loader } from './Loader';
+import Loader from './Loader';
 
 const { Text } = Typography;
 const { Panel } = Collapse;
 
-export const Exchanges = () => {
+const Exchanges = () => {
   const { data, isFetching } = useGetExchangesQuery();
   const exchangesList = data?.data?.exchanges;
-
+ // Note: To access this endpoint you need premium plan
   if (isFetching) return <Loader />;
 
   return (
@@ -24,14 +24,14 @@ export const Exchanges = () => {
         <Col span={6}>Change</Col>
       </Row>
       <Row>
-        {exchangesList.map((exchange) => (
+        {/* {exchangesList.map((exchange) => (
           <Col span={24}>
             <Collapse>
               <Panel
-                key={exchange.id}
+                key={exchange.uuid}
                 showArrow={false}
                 header={(
-                  <Row key={exchange.id}>
+                  <Row key={exchange.uuid}>
                     <Col span={6}>
                       <Text><strong>{exchange.rank}.</strong></Text>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
@@ -47,7 +47,7 @@ export const Exchanges = () => {
               </Panel>
             </Collapse>
           </Col>
-        ))}
+        ))} */}
       </Row>
     </>
   );
